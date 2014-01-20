@@ -42,15 +42,20 @@ def collatz_eval((i, j)):
         t = i
         i = j
         j = t
+    if j/2 > i:
+        i = j/2
     for x in range(i, j+1):
-        if j/2 > x:
-            x = j/2
         m = helper(x)
         if m > v:
             v = m
     assert v > 0
     return v
 
+# this cache implementation is not working...
+# need to figure out which is better {} or []
+# need to figure out upper bounds
+
+_cache = {1: 1}
 
 def helper(i):
     """
@@ -58,11 +63,11 @@ def helper(i):
     return int  cycle length
 
     """
-
-    if i == 1:
-        return 1
+    if i in _cache:
+        return _cache[i]
     elif i % 2:
-        return helper(3*i/2 + 1) + 2
+        _cache[i] = helper(3*i/2 + 1) + 2
+        return _cache[i]
     else:
         return helper(i / 2) + 1
 
@@ -78,6 +83,7 @@ def collatz_print(w, (i, j), v):
     v is the max cycle length
     i is the beginning of the range, inclusive
     j is the end       of the range, inclusive
+
     """
     w.write(str(i) + " " + str(j) + " " + str(v) + "\n")
 
@@ -91,8 +97,8 @@ def collatz_solve(r, w):
     read, eval, print loop
     r is a reader
     w is a writer
+
     """
-    _cache[1] = 1
-    for t in collatz_read(r) :
+    for t in collatz_read(r):
         v = collatz_eval(t)
         collatz_print(w, t, v)
