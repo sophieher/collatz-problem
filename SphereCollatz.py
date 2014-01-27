@@ -54,6 +54,7 @@ def collatz_eval((i, j)):
 
 _cache = {1: 1}
 
+
 def helper(i):
     """
     i is the int to find the cycle length recursively
