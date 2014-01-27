@@ -104,6 +104,9 @@ def collatz_solve(r, w):
     w is a writer
 
     """
+    # eager cache for values 10,000 to 50,000
+    # for i in range(10000, 50000):
+    #     helper(i)
     for t in collatz_read(r):
         v = collatz_eval(t)
         collatz_print(w, t, v)

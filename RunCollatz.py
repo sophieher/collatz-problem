@@ -1,13 +1,14 @@
-__author__ = 'sophiahernandez'
+#!/usr/bin/env python
+#__author__ = 'sophiahernandez'
 
 """
 To run the program
-    % python RunCollatz.py < RunCollatz.in > RunCollatz.tmp
-    % chmod ugo+x RunCollatz.py
-    % RunCollatz.py < RunCollatz.in > RunCollatz.out
+    python RunCollatz.py < RunCollatz.in > RunCollatz.tmp
+    chmod ugo+x RunCollatz.py
+    RunCollatz.py < RunCollatz.in > RunCollatz.out
 
 To document the program
-    % pydoc -w Collatz
+    pydoc -w Collatz
 
 """
 

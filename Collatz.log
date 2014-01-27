@@ -1,0 +1,50 @@
+commit 269391d6f1f51348539d9e31fb682f8813ea15bb
+Author: sophieher <soph1her@cs.utexas.edu>
+Date:   Sun Jan 26 18:26:42 2014 -0600
+
+    Flesh out unit tests.
+    
+    - Add unit tests.
+    - Add simple meta cache for quick lookup n < 10000.
+
+commit fc3b4ed5e1f8c40a1497654b3e21a656d1eb504c
+Author: sophieher <soph1her@cs.utexas.edu>
+Date:   Mon Jan 20 18:55:47 2014 -0600
+
+    Add Acceptance Tests.
+    
+    - Created 1000 random pairs of numbers.
+    - Added Acceptance Tests to the shared test repo.
+
+commit 9d13b06f6fdb3a732ae01f812c16d960acb444eb
+Author: sophieher <soph1her@cs.utexas.edu>
+Date:   Mon Jan 20 17:49:47 2014 -0600
+
+    Sphere Accepted.
+    
+    - Added dictionary to call for caching.
+    - Added TestCollatz.py skeleton files.
+    - Refactored some code in collatz_eval() to make it run faster.
+
+commit 98e2d7e594f20bc2d9e39763b29ba81d1f0f03ae
+Merge: 18ed7fb 5c78e3c
+Author: sophieher <soph1her@cs.utexas.edu>
+Date:   Mon Jan 20 01:40:58 2014 -0600
+
+    Merge branch 'master' of github.com:sophieher/cs373-collatz
+
+commit 5c78e3c3e73157282179ec9bf1d593d58b983bee
+Author: Sophie Hernandez <soph1her@cs.utexas.edu>
+Date:   Sun Jan 19 23:39:37 2014 -0800
+
+    Initial commit
+
+commit 18ed7fbbef1ec223e972e45ed7cae0327a17618d
+Author: sophieher <soph1her@cs.utexas.edu>
+Date:   Mon Jan 20 01:35:47 2014 -0600
+
+    Initial commit. Add files.
+    
+    - Working code with time out on Sphere.
+    - Uses both quiz optimizations.
+    - Need to add caches.
