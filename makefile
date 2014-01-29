@@ -11,7 +11,7 @@ clean:
 	rm -f *.pyc
 
 diff: RunCollatz.in RunCollatz.out RunCollatz.py
-	RunCollatz.py < RunCollatz.in > RunCollatz.tmp
+	./RunCollatz.py < RunCollatz.in > RunCollatz.tmp
 	diff RunCollatz.out RunCollatz.tmp
 	rm RunCollatz.tmp
 
@@ -43,7 +43,7 @@ Collatz.zip: makefile                                   \
            TestCollatz.py TestCollatz.out
 
 RunCollatz.out: RunCollatz.in RunCollatz.py
-	RunCollatz.py < RunCollatz.in > RunCollatz.out
+	./RunCollatz.py < RunCollatz.in > RunCollatz.out
 
 TestCollatz.out: TestCollatz.py
-	TestCollatz.py > TestCollatz.out
+	./TestCollatz.py &> TestCollatz.out

@@ -21,7 +21,7 @@ To test the program:
 import StringIO
 import unittest
 
-from Collatz import collatz_read, collatz_eval, collatz_print, collatz_solve
+from Collatz import collatz_read, collatz_eval, collatz_print, collatz_solve, helper
 
 # -----------
 # TestCollatz
@@ -67,12 +67,16 @@ class TestCollatz(unittest.TestCase):
         self.assert_(v == 125)
 
     def test_eval_3(self):
-        v = collatz_eval((201, 210))
+        v = collatz_eval((210, 201))
         self.assert_(v == 89)
 
     def test_eval_4(self):
         v = collatz_eval((900, 1000))
         self.assert_(v == 174)
+
+    def test_eval_5(self):
+        v = collatz_eval((1, 1))
+        self.assertEqual(v, 1)
 
     # -----
     # print
@@ -110,10 +114,35 @@ class TestCollatz(unittest.TestCase):
         self.assert_(w.getvalue() == "6756 5153 262\n3106 5915 238\n3424 9728 262\n6211 1489 262\n957 7807 262\n")
 
     def test_solve2(self):
-        r = StringIO.StringIO("1 10\n100 200\n201 210\n900 1000\n")
+        r = StringIO.StringIO("1 1\n")
         w = StringIO.StringIO()
         collatz_solve(r, w)
-        self.assert_(w.getvalue() == "1 10 20\n100 200 125\n201 210 89\n900 1000 174\n")
+        self.assert_(w.getvalue() == "1 1 1\n")
+
+
+    # ------
+    # helper
+    # ------
+
+    def test_helper(self):
+        i = 9
+        o = 20
+        self.assertEqual(o, helper(i))
+
+    def test_helper1(self):
+        i = 2
+        o = 2
+        self.assertEqual(o, helper(i))
+
+    def test_helper2(self):
+        i = 9999
+        o = 92
+        self.assertEqual(o, helper(i))
+
+    def test_helper3(self):
+        i = 99999
+        o = 227
+        self.assertEqual(o, helper(i))
 
 # ----
 # main
