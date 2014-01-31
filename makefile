@@ -24,13 +24,13 @@ turnin-submit: Collatz.zip
 turnin-verify:
 	turnin --verify thunt cs373pj1
 
-Collatz.html: Collatz.py
+doc: Collatz.py
 	pydoc -w Collatz
 
-Collatz.log:
+log:
 	git log > Collatz.log
 
-Collatz.zip: makefile                                   \
+zip: makefile                                   \
              Collatz.html Collatz.log Collatz.py        \
              RunCollatz.in RunCollatz.out RunCollatz.py \
              SphereCollatz.py                           \
@@ -42,8 +42,8 @@ Collatz.zip: makefile                                   \
            SphereCollatz.py                           \
            TestCollatz.py TestCollatz.out
 
-RunCollatz.out: RunCollatz.in RunCollatz.py
+run: RunCollatz.in RunCollatz.py
 	./RunCollatz.py < RunCollatz.in > RunCollatz.out
 
-TestCollatz.out: TestCollatz.py
-	./TestCollatz.py &> TestCollatz.out
+test: TestCollatz.py
+	./TestCollatz.py > TestCollatz.out 2>&1
