@@ -53,7 +53,7 @@ def collatz_eval((i, j)):
     assert v > 0
     return v
 
-# _cache is a dictionary for searching for cycle lengths initialized with 1: 1
+# _cache is a dictionary used as a lazy cache for searching for cycle lengths
 _cache = {}
 
 def helper(i):
